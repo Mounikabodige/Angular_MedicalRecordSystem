@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-sm-6">
+    <h1> Login Page</h1>
+<hr>
+<form #registrationForm="ngForm" (ngSubmit)="onRegister()"  >
+<div class="form-group">
+    <label for="email">Email:</label>
+    <input class="form-control" type="text" placeholder="Email Address"  name="email" [(ngModel)]="user.email" required>
+</div>
+<div  class="form-group">
+    <label for="firstName">First Name</label>
+    <input class="form-control" type="text" name="firstName" id="firstName" [(ngModel)]="user.firstName" placeholder="First Name" required>
+</div>
+<div  class="form-group">
+    <label for="lastName">Last Name</label>
+    <input class="form-control" type="text" name="lastName" id="lastName" [(ngModel)]="user.lastName" placeholder="Last Name" required>
+</div>
+<div  class="form-group">
+    <label for="password">Password:</label>
+    <input class="form-control" type="password"  name="password" id="password" [(ngModel)]="user.password"placeholder="Password" required>
+</div>
+<div  class="form-group">
+    <label for="confrim">Confirm Password:</label>
+    <input class="form-control" type="password" name="confrim" id="confrim" placeholder="Confirm Password" required>
+</div>
+<div  class="form-group">
+    <label for="userType">UserType</label><br>
+    <label>Doctor</label>   <input type="radio" [(ngModel)]="user.userType" id="doctor" name="userType" value="doctor"><br>
+    <label>Patient</label>  <input type="radio" [(ngModel)]="user.userType"  id="patient" name="userType" value="patient"><br>
+</div>
+
+<div >
+    <button type="submit" class="btn  btn-outline-primary pull-right"  [disabled]="!registrationForm.form.valid"> Register</button>
+    <button  type="button" class="btn  btn-outline-secondary pull-right"  (click)="cancel()"> Cancel</button>
+</div>
+</form>
+</div>
+
+</div>
